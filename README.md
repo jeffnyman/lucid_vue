@@ -17,6 +17,14 @@ Current execution can be done via the `lucid` script. This is currently just a w
 ./lucid
 ```
 
+This will run all of the feature specifications. By default, Chrome will be used as the browser to execute against. You can run against other browsers (assuming you have the browsers and the drivers on your machine).
+
+```
+./lucid BROWSER=firefox
+./lucid BROWSER=ie
+./lucid BROWSER=edge
+```
+
 ## WebDriver Binaries
 
 This project uses my [WebDriver Manager](https://github.com/jeffnyman/webdriver_manager), which will automatically download certain WebDriver binaries for you. Currently the best supported binaries are Chrome and Firefox and that's because these are the most reliable to get. There is support to attempt grabbing the IE driver server as well as the MSWebDriver. The latter is used for Edge while the former is used for Internet Explorer.
