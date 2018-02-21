@@ -1,0 +1,3 @@
+<% std_opts = "--format pretty -r config -r common -r models -r steps" %>
+
+default: <%= std_opts %>
