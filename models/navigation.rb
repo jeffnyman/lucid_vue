@@ -2,7 +2,12 @@ class Navigation
   include Tapestry
 
   element :page_list, id: 'navlist'
-  element :overlord, id: 'overlord'
+  element :overlord,  id: 'overlord'
+  element :planets,   id: 'planets'
+
+  link    :planet_weight_calculator, id: 'planets'
+
+  element :planet_logo,   id:  'planet-logo'
 
   image   :overlord_logo, src: 'images/mad-scientist.png'
 
@@ -17,6 +22,12 @@ class Navigation
     overlord.click
     expect(overlord_logo.exists?).to be true unless expect_fail
     admin_only_error if expect_fail
+  end
+
+  def to_planet_page
+    open_page_list
+    planets.click
+    expect(planet_logo.exists?).to be true
   end
 
   private

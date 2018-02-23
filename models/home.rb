@@ -45,4 +45,8 @@ class Home
       expect(message.text).to eq(Config.context(type)['message'])
     end
   end
+
+  def login_as_authenticated_user
+    login_as_user("authenticated")
+  end
 end
