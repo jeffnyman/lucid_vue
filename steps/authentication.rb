@@ -11,3 +11,8 @@ Given(/^an authenticated user on the planets page$/) do
   # Another way to do it.
   #on(Navigation).navigate_to("planet weight calculator")
 end
+
+Given(/^an authenticated user on the warp travel page$/) do
+  on_view(Home).login_as_authenticated_user
+  on(Navigation).navigate.to_warp_travel_page
+end

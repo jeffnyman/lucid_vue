@@ -4,10 +4,13 @@ class Navigation
   element :page_list, id: 'navlist'
   element :overlord,  id: 'overlord'
   element :planets,   id: 'planets'
+  element :warp,      id: 'warp'
 
-  link    :planet_weight_calculator, id: 'planets'
+  link  :planet_weight_calculator, id: 'planets'
+  link  :warp_factor_calculator,   id: 'warp'
 
   element :planet_logo,   id:  'planet-logo'
+  element :warp_logo,     id:  'warp-logo'
 
   image   :overlord_logo, src: 'images/mad-scientist.png'
 
@@ -28,6 +31,12 @@ class Navigation
     open_page_list
     planets.click
     expect(planet_logo.exists?).to be true
+  end
+
+  def to_warp_travel_page
+    open_page_list
+    warp.click
+    expect(warp_logo.exists?).to be true
   end
 
   private

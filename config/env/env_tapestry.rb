@@ -1,6 +1,8 @@
 require "tapestry"
 World(Tapestry::Factory)
 
+require "data_builder"
+
 def browser_context_start
   target = (ENV['BROWSER'] || 'chrome').to_sym
   Tapestry.start_browser target
