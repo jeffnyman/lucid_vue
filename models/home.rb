@@ -29,13 +29,20 @@ class Home
   end
 
   def login_as_user(type)
-    type = Config.context(Config.current.user)['username'] if type == "authenticated"
+    # You could the following commented out statement instead of wrapping
+    # the statements with the `when_ready` block.
+    #
+    # check_if_ready
 
-    login_form.click
-    username.set Config.context(type)['username']
-    password.set Config.context(type)['password']
-    login.click
-    
-    expect(message.text).to eq(Config.context(type)['message'])
+    when_ready do
+      type = Config.context(Config.current.user)['username'] if type == "authenticated"
+
+      login_form.click
+      username.set Config.context(type)['username']
+      password.set Config.context(type)['password']
+      login.click
+
+      expect(message.text).to eq(Config.context(type)['message'])
+    end
   end
 end
