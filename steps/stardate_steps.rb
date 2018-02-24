@@ -12,6 +12,10 @@ When("the tng era {float} is converted") do |value|
   @actual = on(Stardate).calculate_tng_stardate(value)
 end
 
+When("converting a tos era stardate") do
+  on(Stardate).set_tos_era
+end
+
 Then("the displayed and calculated calendar year should be {int}") do |expected_year|
   expect(@context.displayed_calendar_date).to include(expected_year.to_s)
   expect(@actual.year).to eq(expected_year)
@@ -46,4 +50,15 @@ Then(/^a stardate with (.*) returns a warning message:$/) do |condition, expecte
   value = on(Stardate).calculate_invalid_stardate(condition)
   expect(@context.error_message).to eq(expected_message)
   condition_reporter(value)
+end
+
+Then("there is no option to calculate stardates per year") do
+  on(Stardate).verify_no_per_year_option
+end
+
+Then(/^TOS conversions do not have a leap year option$/) do
+  on(Stardate) do |action|
+    action.set_tos_era
+    action.verify_no_per_year_option
+  end
 end

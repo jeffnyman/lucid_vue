@@ -38,3 +38,10 @@ Feature: Calculate Stardates
       | 46379.1  | 2369 | DS9 begins   |
       | 48315.6  | 2371 | VOY begins   |
       | 56844.9  | 2380 | TNG: Nemesis |
+
+  Scenario: TOS Conversions Have No Leap Year Calculation
+    When converting a tos era stardate
+    Then there is no option to calculate stardates per year
+
+  Scenario: TOS Conversions Have No Leap Year Calculation (Business Rule)
+    * TOS conversions do not have a leap year option
