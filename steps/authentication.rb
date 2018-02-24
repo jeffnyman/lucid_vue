@@ -24,3 +24,8 @@ Given(/^an authenticated user on the stardate page$/) do
   # Another way to do it.
   #on(Navigation).navigate_to("stardate calculator")
 end
+
+Given(/^an authenticated user on the overlord page$/) do
+  on_view(Home).login_as_authenticated_user
+  on(Navigation).navigate.to_overlord_page
+end

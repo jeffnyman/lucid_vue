@@ -2,6 +2,8 @@ source 'https://rubygems.org'
 
 gem 'tapestry'
 gem 'syntax'
+gem 'colorize'
+gem 'to_words'
 gem 'cucumber'
 gem 'rspec'
 gem 'data_builder'
