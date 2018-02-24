@@ -5,12 +5,15 @@ class Navigation
   element :overlord,  id: 'overlord'
   element :planets,   id: 'planets'
   element :warp,      id: 'warp'
+  element :stardate,  id: 'stardate'
 
   link  :planet_weight_calculator, id: 'planets'
   link  :warp_factor_calculator,   id: 'warp'
+  link  :stardate_calculator,      id: 'stardate'
 
   element :planet_logo,   id:  'planet-logo'
   element :warp_logo,     id:  'warp-logo'
+  element :stardate_logo, id:  'stardate-logo'
 
   image   :overlord_logo, src: 'images/mad-scientist.png'
 
@@ -18,6 +21,11 @@ class Navigation
 
   def navigate
     self
+  end
+
+  def navigate_to(location)
+    page_list.wait_until(&:dom_updated?).click
+    self.send("#{location.as_element}").click
   end
 
   def to_overlord_page(expect_fail = nil)
@@ -37,6 +45,12 @@ class Navigation
     open_page_list
     warp.click
     expect(warp_logo.exists?).to be true
+  end
+
+  def to_stardate_page
+    open_page_list
+    stardate.click
+    expect(stardate_logo.exists?).to be true
   end
 
   private

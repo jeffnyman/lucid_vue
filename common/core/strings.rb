@@ -10,4 +10,8 @@ class String
   def is_roughly(value, threshold=1.9)
     expect(self.to_i).to be_within(threshold).of(value)
   end
+
+  def as_list
+    self.gsub("\n", "\n\n")
+  end
 end
