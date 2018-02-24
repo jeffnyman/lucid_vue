@@ -9,12 +9,12 @@ end
 
 When("the tng era {float} is converted") do |value|
   on(Stardate).convert_tng_stardate(value)
-  #@actual = on(Stardate).calculate_tng_stardate(value)
+  @actual = on(Stardate).calculate_tng_stardate(value)
 end
 
 Then("the displayed and calculated calendar year should be {int}") do |expected_year|
-  #expect(@context.displayed_calendar_date).to include(expected_year)
-  #expect(@actual.year).to eq(expected_year)
+  expect(@context.displayed_calendar_date).to include(expected_year.to_s)
+  expect(@actual.year).to eq(expected_year)
 end
 
 Then("the displayed calendar response should contain {string}") do |date|
@@ -22,7 +22,6 @@ Then("the displayed calendar response should contain {string}") do |date|
 end
 
 Then("the calculated calendar year should be {string}") do |expected_year|
-  #on(Stardate).verify_calculated_calendar_year(@actual, year)
   expect(@actual.year).to eq(expected_year.to_i)
 end
 
