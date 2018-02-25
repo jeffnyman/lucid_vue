@@ -40,3 +40,11 @@ gem 'to_words'
 # For nicer printing of objects.
 
 gem 'awesome_print'
+
+# To build a repo browser.
+
+gem 'yard-lucid'
+
+# For reporting.
+
+gem 'lucid_report'
