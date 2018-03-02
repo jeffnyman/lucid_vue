@@ -48,3 +48,8 @@ gem 'yard-lucid'
 # For reporting.
 
 gem 'lucid_report'
+
+# For API testing.
+
+gem 'rest-client'
+gem 'json_expressions'

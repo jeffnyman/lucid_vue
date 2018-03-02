@@ -1,10 +1,40 @@
+# Ruby-Specific
+
 /.bundle/
 /.yardoc
+/Gemfile.lock
 /_yardoc/
+
+# Ouput-Specific
+
 /coverage/
-/results/
 /doc/
 /pkg/
 /spec/reports/
 /tmp/
-/.ruby-version
+*.log
+*.tmp
+*.swp
+*.bak
+
+# IDE-Specific
+
+.idea
+.settings
+.project
+.classpath
+*.iws
+
+# Windows-Specific
+
+Thumbs.db
+
+# Mac OS-Specific
+
+*.DS_Store
+._*
+
+# Linux-Specific
+
+.directory
+.Trash-*
