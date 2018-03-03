@@ -12,6 +12,10 @@ gem 'webdriver_manager'
 
 gem 'test_performance'
 
+# For using workflow or journey patterns.
+
+gem 'test_workflow'
+
 # If you want Cucumber, you need to add these.
 
 gem 'syntax'
@@ -53,3 +57,11 @@ gem 'lucid_report'
 
 gem 'rest-client'
 gem 'json_expressions'
+
+# For queryable repo.
+
+gem 'cql'
+
+# For linting English.
+
+gem 'cuke_sniffer'

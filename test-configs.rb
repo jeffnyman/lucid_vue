@@ -38,3 +38,12 @@ puts "----------------"
 puts Config.context('tester')
 puts Config.context('tester')['username']
 puts Config.context('tester')['password']
+
+puts "----------------"
+
+TestData = DataAccessible.sources do |source|
+  source.data_load "data/stardates/stardate_conditions.yml"
+end
+
+puts TestData.to_h
+puts TestData.stardate.invalid.conditions
