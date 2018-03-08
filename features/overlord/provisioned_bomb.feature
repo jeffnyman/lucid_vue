@@ -6,7 +6,7 @@ Feature: Successful Bomb Provisioning
     - Deactivation code: 0000
     - Countdown value:   30
 
-  Unless specified otheriwse, an activated bomb will use the defaut
+  Unless specified otherwise, an activated bomb will use the default
   provisioning.
 
   Background:
