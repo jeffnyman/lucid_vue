@@ -25,3 +25,9 @@ Feature: Gracefully Handle Invalid Stardates
       """
       Stardates must be four (TOS) or five (TNG) digits.
       """
+
+  Scenario: Stardates Must Be Four or Five Characters
+    * a stardate with something strange returns a warning message:
+      """
+      Stardates must be four (TOS) or five (TNG) digits.
+      """

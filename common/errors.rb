@@ -13,3 +13,5 @@ class DataValidationError < StandardError; end
 class UnexpectedDataFoundError < StandardError; end
 
 class TestDataNotFoundError < StandardError; end
+
+class PossibleDataContextError < StandardError; end
