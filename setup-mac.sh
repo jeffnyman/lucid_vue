@@ -28,7 +28,7 @@ rbenv global 2.5.0
 rbenv rehash
 
 # Clone Lucid repo.
-git clone https://github.com/Guaranteed-Rate/lucid-vue
+git clone https://github.com/jeffnyman/lucid_vue
 cd lucid-vue
 
 # Execution Context.
